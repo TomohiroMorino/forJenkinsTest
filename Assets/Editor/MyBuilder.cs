@@ -24,7 +24,6 @@ public class MyBuilder : MonoBehaviour {
 	
 	[UnityEditor.MenuItem("Tools/Build Project AllScene iOS")]
 	public static void BuildProjectAllSceneiOS() {	
-		Debug.Log("##########iOS Build Start#########");
 		EditorUserBuildSettings.SwitchActiveBuildTarget( BuildTarget.iPhone );
 		string[] allScene = new string[EditorBuildSettings.scenes.Length];
 		int i = 0;
@@ -56,8 +55,21 @@ public class MyBuilder : MonoBehaviour {
 		}
 		
 		
-		//BUILD for Simulator
+
+		//BUILD for Simulator 
+		//Simulatorでも見られるように XCODEプロジェクトを別途用意。
 		PlayerSettings.iOS.sdkVersion = iOSSdkVersion.SimulatorSDK;
 		//あとはDeviceビルドと同様に。
+		string errorMsg_Simulator = BuildPipeline.BuildPlayer( 
+		                                                      allScene,
+		                                                      "hoge4iOSsimulator",
+		                                                      BuildTarget.iPhone,
+		                                                      opt
+		                                                      );
+		if (string.IsNullOrEmpty(errorMsg_Simulator)){
+			
+		} else {
+			//エラー処理適当に		
+		}
 	}
 }
