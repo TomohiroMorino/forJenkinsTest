@@ -22,9 +22,9 @@ public class MyBuilder : MonoBehaviour {
 		                          );
 	}
 	
-	/*
 	[UnityEditor.MenuItem("Tools/Build Project AllScene iOS")]
 	public static void BuildProjectAllSceneiOS() {	
+		Debug.Log("##########iOS Build Start#########");
 		EditorUserBuildSettings.SwitchActiveBuildTarget( BuildTarget.iPhone );
 		string[] allScene = new string[EditorBuildSettings.scenes.Length];
 		int i = 0;
@@ -40,7 +40,7 @@ public class MyBuilder : MonoBehaviour {
 		
 		//BUILD for Device
 		PlayerSettings.iOS.sdkVersion = iOSSdkVersion.DeviceSDK;
-		PlayerSettings.bundleIdentifier = "jp.co.hoge.hoge";
+		PlayerSettings.bundleIdentifier = "com.unity3d.forjenkinstest";//"jp.co.hoge.hoge";
 		PlayerSettings.statusBarHidden = true;
 		string errorMsg_Device = BuildPipeline.BuildPlayer( 
 		                                                   allScene,
@@ -56,9 +56,8 @@ public class MyBuilder : MonoBehaviour {
 		}
 		
 		
-		　　//BUILD for Simulator
-		　　PlayerSettings.iOS.sdkVersion = iOSSdkVersion.SimulatorSDK;
-		　　//あとはDeviceビルドと同様に。
+		//BUILD for Simulator
+		PlayerSettings.iOS.sdkVersion = iOSSdkVersion.SimulatorSDK;
+		//あとはDeviceビルドと同様に。
 	}
-	*/
 }
