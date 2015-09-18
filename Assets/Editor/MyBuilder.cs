@@ -24,7 +24,7 @@ public class MyBuilder : MonoBehaviour {
 	
 	[UnityEditor.MenuItem("Tools/Build Project AllScene iOS")]
 	public static void BuildProjectAllSceneiOS() {	
-		EditorUserBuildSettings.SwitchActiveBuildTarget( BuildTarget.iPhone );
+		EditorUserBuildSettings.SwitchActiveBuildTarget( BuildTarget.iOS );
 		string[] allScene = new string[EditorBuildSettings.scenes.Length];
 		int i = 0;
 		foreach( EditorBuildSettingsScene scene in EditorBuildSettings.scenes ){
@@ -44,7 +44,7 @@ public class MyBuilder : MonoBehaviour {
 		string errorMsg_Device = BuildPipeline.BuildPlayer( 
 		                                                   allScene,
 		                                                   "hoge4iOSDevice",
-		                                                   BuildTarget.iPhone,
+		                                                   BuildTarget.iOS,
 		                                                   opt
 		                                                   );
 		
@@ -63,7 +63,7 @@ public class MyBuilder : MonoBehaviour {
 		string errorMsg_Simulator = BuildPipeline.BuildPlayer( 
 		                                                      allScene,
 		                                                      "hoge4iOSsimulator",
-		                                                      BuildTarget.iPhone,
+		                                                      BuildTarget.iOS,
 		                                                      opt
 		                                                      );
 		if (string.IsNullOrEmpty(errorMsg_Simulator)){
