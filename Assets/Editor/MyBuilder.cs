@@ -13,7 +13,7 @@ public class MyBuilder : MonoBehaviour {
 			allScene[i] = scene.path;
 			i++;
 		}	
-		PlayerSettings.bundleIdentifier = "com.unity3d.forjenkinstest";//"jp.co.hoge.hoge";
+		PlayerSettings.bundleIdentifier = "jp.co.tayutau.lf.dev";//"com.unity3d.forjenkinstest";//"jp.co.hoge.hoge";
 		PlayerSettings.statusBarHidden = true;
 		BuildPipeline.BuildPlayer( allScene,
 		                          "hoge.apk",
